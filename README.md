@@ -1,5 +1,5 @@
 # vue-examples
-
+init
 ## Project setup
 ```
 npm install
