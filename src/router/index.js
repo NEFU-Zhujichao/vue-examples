@@ -8,7 +8,7 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: (Home)
+    component: Home
   },
   {
     path: "/Example01",
@@ -25,6 +25,18 @@ const routes = [
     path: "/Example03/students/:sid/homework/:hid",
     name: "example03",
     component: () => import("@/views/example03/Example03.vue")
+  },
+  {
+    path: "/Example04-1",
+    component: () => import("@/views/example04/Example04-1.vue")
+  },
+  {
+    path: "/Example04-2",
+    component: () => import("@/views/example04/Example04-2.vue")
+  },
+  {
+    path: "/Example04-3",
+    component: () => import("@/views/example04/Example04-3.vue")
   }
 ];
 
