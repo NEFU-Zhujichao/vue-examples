@@ -35,6 +35,7 @@
         <li>
           <ul>
             <li><router-link to="/Example05-1">v-model1</router-link></li>
+            <li><router-link to="/Example05-2">v-model2</router-link></li>
           </ul>
         </li>
       </ul>
@@ -60,8 +61,10 @@
   color: white;
 }
 #router {
-  display: block;
   margin: 20px 0;
+}
+router-link {
+  text-decoration: none;
 }
 #router li {
   list-style-type: none;
@@ -69,11 +72,11 @@
 #router ul li {
   text-decoration: none;
   display: block;
-  padding: 10px 20px;
+  padding: 5px 20px;
   text-align: center;
 }
 #router ul li:hover {
-  background: red;
+  background: palevioletred;
 }
 #router ul li ul li:hover {
   background: green;

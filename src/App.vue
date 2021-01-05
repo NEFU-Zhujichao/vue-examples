@@ -33,6 +33,5 @@ export default {
 }
 #router {
   border: 1px solid springgreen;
-  width: 300px;
 }
 </style>
