@@ -3,18 +3,18 @@
     <sidebar id="sidebar" />
     <div>
       <h1>HelloVue</h1>
-      <hr>
+      <hr />
       <router-view id="router" :key="$route.path" />
     </div>
   </div>
 </template>
 <script>
-import sidebar from "./views/Sidebar"
+import sidebar from "./views/Sidebar";
 export default {
-   components: {
-      sidebar
-     }
-}
+  components: {
+    sidebar
+  }
+};
 </script>
 <style>
 * {

@@ -32,6 +32,11 @@
             <li><router-link to="/Example04-3">director3</router-link></li>
           </ul>
         </li>
+        <li>
+          <ul>
+            <li><router-link to="/Example05-1">v-model1</router-link></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
