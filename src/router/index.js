@@ -45,6 +45,18 @@ const routes = [
   {
     path: "/Example05-2",
     component: () => import("@/views/example05/Example05-2.vue")
+  },
+  {
+    path: "/Example06-1",
+    component: () => import("@/views/example06/Example06-1.vue")
+  },
+  {
+    path: "/Example06-2",
+    component: () => import("@/views/example06/Example06-2.vue")
+  },
+  {
+    path: "/Example06-3",
+    component: () => import("@/views/example06/Example06-3.vue")
   }
 ];
 

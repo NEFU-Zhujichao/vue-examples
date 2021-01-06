@@ -38,6 +38,17 @@
             <li><router-link to="/Example05-2">v-model2</router-link></li>
           </ul>
         </li>
+        <li>
+          <ul>
+            <li><router-link to="/Example06-1">绑定计算属性</router-link></li>
+            <li>
+              <router-link to="/Example06-2">同步修改计算属性</router-link>
+            </li>
+            <li>
+              <router-link to="/Example06-3">异步修改计算属性</router-link>
+            </li>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
