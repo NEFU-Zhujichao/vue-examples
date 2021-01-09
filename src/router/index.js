@@ -70,7 +70,34 @@ const routes = [
     props: true,
     path: "/homeworks/:hid",
     component: () => import("@/views/example07/Example07-3.vue")
+  },
+  {
+    path: "/Example08",
+    component: () => import("@/views/example08/Example08.vue")
+  },
+  {
+    path: "/Example09",
+    component: () => import("@/views/example09/Example09.vue")
+  },
+  {
+    path: "/Example10",
+    component: () => import("@/views/example10/Example10.vue"),
+    children: [
+      {
+        props: true,
+        path: "homeworks/:hid",
+        component: () => import("@/views/example10/Example10-02.vue")
+      }
+    ]
   }
+  /* 同级路由用name属性区分。
+  {
+    path: "/Example10",
+    component: {
+      default: () => import("@/views/example10/Example10.vue"),
+      button:  () => import("@/views/example10/Example10-02.vue")
+    }
+  }*/
 ];
 
 const router = new VueRouter({

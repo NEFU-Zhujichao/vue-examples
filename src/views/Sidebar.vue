@@ -55,6 +55,15 @@
             <li><router-link to="/homeworks">homeworks</router-link></li>
           </ul>
         </li>
+        <li>
+          <router-link to="/Example08">props</router-link>
+        </li>
+        <li>
+          <router-link to="/Example09">interceptors</router-link>
+        </li>
+        <li>
+          <router-link to="/Example10">嵌套路由</router-link>
+        </li>
       </ul>
     </div>
   </div>

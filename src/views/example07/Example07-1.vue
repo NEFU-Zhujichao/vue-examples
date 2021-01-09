@@ -45,7 +45,7 @@ export default {
       axios
         .post("login", {
           number: 1001,
-          password: "123456"
+          password: "aaaaa"
         })
         .then(resp => {
           this.user = resp.data.user;
