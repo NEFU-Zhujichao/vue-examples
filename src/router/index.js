@@ -70,6 +70,10 @@ const routes = [
     props: true,
     path: "/homeworks/:hid",
     component: () => import("@/views/example07/Example07-3.vue")
+  },
+  {
+    path: "/Example08",
+    component: () => import("@/views/example08/Example08.vue")
   }
 ];
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
-let mock = new MockAdapter(axios, { delayResponse: 2000 });
+let mock = new MockAdapter(axios);
 
 mock.onGet(path("users/{uid}")).reply(200, {
   user: {
