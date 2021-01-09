@@ -1,7 +1,7 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
-let mock = new MockAdapter(axios);
+let mock = new MockAdapter(axios, { delayResponse: 2000 });
 
 mock.onGet(path("users/{uid}")).reply(200, {
   user: {
@@ -33,6 +33,17 @@ mock.onPost("login").reply(c => {
   }
   return result;
 });
+mock.onGet(path("homeworks")).reply(200, {
+  homeworks: [
+    { id: 1, name: "Java基本数据类型", deadline: "2019-04-10T09:00" },
+    { id: 2, name: "Java封装", deadline: "2019-05-10T12:00" },
+    { id: 3, name: "Java泛型", deadline: "2019-06-10T21:30" }
+  ]
+});
+mock.onGet(path("homeworks/{hid}")).reply(200, {
+  homework: { id: 1, name: "Java基本数据类型", deadline: "2019-04-10T09:00" }
+});
+
 function path(p) {
   let reg = p.replace(/{\w+}/g, "\\w+").replace("///g", "\\/") + "$";
   return new RegExp(reg);

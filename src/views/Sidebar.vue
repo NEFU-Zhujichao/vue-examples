@@ -52,6 +52,7 @@
         <li>
           <ul>
             <li><router-link to="/Example07-1">axios基本请求</router-link></li>
+            <li><router-link to="/homeworks">homeworks</router-link></li>
           </ul>
         </li>
       </ul>
