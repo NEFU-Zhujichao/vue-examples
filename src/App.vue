@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <alertdialog />
     <sidebar id="sidebar" />
     <div>
       <h1>HelloVue</h1>
@@ -13,8 +12,7 @@
 import sidebar from "./views/Sidebar";
 export default {
   components: {
-    sidebar,
-    alertdialog: () => import("@/components/AlertDialog")
+    sidebar
   }
 };
 </script>

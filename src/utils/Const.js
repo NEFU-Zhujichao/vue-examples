@@ -1,1 +1,1 @@
-export const author = "Authorization";
+export const author = "authorization";

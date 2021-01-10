@@ -30,7 +30,7 @@ mock.onPost("login").reply(c => {
         role: "abcccccccccccccccccccccc"
       },
       {
-        Authorization: "65a1c6a5ca65c1a65a1c6a5ca65c1a65a1c6a5ca65c1a"
+        authorization: "65a1c6a5ca65c1a65a1c6a5ca65c1a65a1c6a5ca65c1a"
       }
     ];
   }
@@ -51,7 +51,10 @@ mock.onGet(path("homeworks/{hid}")).reply(c => {
 });
 mock.onGet("index").reply(c => {
   let result = [403, { message: "无权限" }];
-  if (sessionStorage.getItem("role") == "abcccccccccccccccccccccc") {
+  console.log(c);
+  let auth = c.headers[author];
+  console.log(auth);
+  if (auth == "65a1c6a5ca65c1a65a1c6a5ca65c1a65a1c6a5ca65c1a") {
     result = [200, { name: "chao" }];
   }
   return result;

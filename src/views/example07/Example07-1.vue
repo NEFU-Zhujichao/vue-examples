@@ -48,7 +48,7 @@ export default {
           password: "12345"
         })
         .then(resp => {
-          console.log(resp.headers["Authorization"]);
+          console.log(resp.headers["authorization"]);
           this.user = resp.data.user;
         });
     }
