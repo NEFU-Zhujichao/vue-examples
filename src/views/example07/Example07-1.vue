@@ -45,11 +45,11 @@ export default {
       axios
         .post("login", {
           number: 1001,
-          password: "aaaaa"
+          password: "12345"
         })
         .then(resp => {
-          this.user = resp.data.user;
           console.log(resp.headers["Authorization"]);
+          this.user = resp.data.user;
         });
     }
   }

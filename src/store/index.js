@@ -2,6 +2,8 @@ import axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
 import * as types from "./types";
+import { author } from "@/utils/Const";
+import { updateRoutes } from "@/router/index";
 Vue.use(Vuex);
 
 const myState = {
@@ -11,7 +13,9 @@ const myState = {
   },
   homeworks: [],
   homework: {},
-  exception: { message: null }
+  exception: { message: null },
+  name: null,
+  isLogin: false
 };
 
 const myMutations = {
@@ -27,6 +31,12 @@ const myMutations = {
   [types.GET_EXCEPTION](state, data) {
     console.log(data);
     state.exception = data;
+  },
+  [types.LOGIN](state, data) {
+    state.isLogin = data;
+  },
+  [types.INDEX](state, data) {
+    state.name = data;
   }
 };
 
@@ -50,14 +60,27 @@ const myActios = {
     return Promise.resolve(resp.data.homework);
   },
   async [types.LOGIN]({ commit }, data) {
-    console.log(data);
     let resp = await axios.post("login", data);
+    let auth = resp.headers[author];
+    if (auth != null) {
+      sessionStorage.setItem(author, auth);
+      sessionStorage.setItem("role", resp.data.role);
+      updateRoutes();
+      commit(types.LOGIN, true);
+    }
+  },
+  async [types.INDEX]({ commit }, data) {
+    let resp = await axios.get("index");
+    commit(types.INDEX, resp.data.name);
   }
 };
-
 export default new Vuex.Store({
   state: myState,
   mutations: myMutations,
   actions: myActios,
   modules: {}
 });
+
+if (sessionStorage.getItem(author) != null) {
+  myState.isLogin = true;
+}

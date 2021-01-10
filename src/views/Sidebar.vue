@@ -65,6 +65,9 @@
         <li>
           <router-link to="/Example10">嵌套路由</router-link>
         </li>
+        <li>
+          <router-link to="/Example11">sessionStorage</router-link>
+        </li>
       </ul>
     </div>
   </div>

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
+    <alertdialog />
     <sidebar id="sidebar" />
     <div>
       <h1>HelloVue</h1>
       <hr />
       <router-view id="router" :key="$route.path" />
-      <alertdialog />
     </div>
   </div>
 </template>

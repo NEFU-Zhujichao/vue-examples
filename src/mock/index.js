@@ -1,3 +1,4 @@
+import { author } from "@/utils/Const";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 
@@ -21,12 +22,12 @@ mock.onGet(path("student/{tid}/homeworks/{hid}")).reply(200, {
 mock.onPost("login").reply(c => {
   let data = c.data;
   let user = JSON.parse(data);
-  let result = [403, { message: "用户名密码错误" }];
+  let result = [401, { message: "用户名密码错误" }];
   if (user.number == "1001" && user.password == "123456") {
     result = [
       200,
       {
-        user: { userName: "BO", userId: 3 }
+        role: "abcccccccccccccccccccccc"
       },
       {
         Authorization: "65a1c6a5ca65c1a65a1c6a5ca65c1a65a1c6a5ca65c1a"
@@ -47,6 +48,13 @@ mock.onGet(path("homeworks/{hid}")).reply(c => {
   let reg = /homeworks\/(\d+)/;
   let hid = c.url.match(reg)[1];
   return [200, { homework: homeworks.find(h => h.id == hid) }];
+});
+mock.onGet("index").reply(c => {
+  let result = [403, { message: "无权限" }];
+  if (sessionStorage.getItem("role") == "abcccccccccccccccccccccc") {
+    result = [200, { name: "chao" }];
+  }
+  return result;
 });
 const homeworks = [
   { id: 1, name: "Java基本数据类型", deadline: "2019-04-10T09:00" },

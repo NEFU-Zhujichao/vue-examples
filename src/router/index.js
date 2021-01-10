@@ -89,7 +89,7 @@ const routes = [
         component: () => import("@/views/example10/Example10-02.vue")
       }
     ]
-  }
+  },
   /* 同级路由用name属性区分。
   {
     path: "/Example10",
@@ -98,6 +98,10 @@ const routes = [
       button:  () => import("@/views/example10/Example10-02.vue")
     }
   }*/
+  {
+    path: "/Example11",
+    component: () => import("@/views/example11/Example11.vue")
+  }
 ];
 
 const router = new VueRouter({
@@ -105,3 +109,21 @@ const router = new VueRouter({
 });
 
 export default router;
+const teacherRole = "abcccccccccccccccccccccc";
+const studentRole = "sss";
+let adminRoutes = [
+  {
+    path: "/Example11/welcome",
+    component: () => import("@/views/example11/Welcome.vue")
+  }
+];
+export function updateRoutes() {
+  switch (sessionStorage.getItem("role")) {
+    case teacherRole:
+      router.addRoutes(adminRoutes);
+      break;
+    case studentRole:
+      break;
+  }
+}
+updateRoutes();
