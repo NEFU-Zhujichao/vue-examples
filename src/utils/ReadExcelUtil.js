@@ -1,14 +1,12 @@
 import xlsx from "xlsx";
 
 export function readExcel(file) {
-  console.log("a");
   return new Promise(resolve => {
     let students = [];
     let reader = new FileReader();
     reader.readAsBinaryString(file);
     // 异步
     reader.onload = event => {
-      console.log("b");
       let data = event.target.result;
       let workbook = xlsx.read(data, { type: "binary" });
       let sheet = workbook.Sheets[workbook.SheetNames[0]];
@@ -25,7 +23,6 @@ export function readExcel(file) {
     // 当load结束，回调
     // 当执行resolve()方法，会激活调用处的then()方法
     reader.onloadend = () => {
-      console.log("c");
       resolve(students);
     };
   });

@@ -34,7 +34,6 @@ export default {
       readExcel(file).then(data => {
         this.students = data;
       });
-      console.log("vue");
     }
   }
 };
