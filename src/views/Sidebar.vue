@@ -1,119 +1,165 @@
 <template>
-  <div>
-    <div id="courses">
-      <ul>
-        <li>Java</li>
-        <li>Spring</li>
-        <li>Vue</li>
-      </ul>
-    </div>
-    <div id="router">
-      <ul>
-        <li><router-link to="/Example01">To</router-link></li>
-        <li><router-link to="/Example02">Data</router-link></li>
-        <li>
-          <ul>
-            <li>
-              <router-link to="/Example03/students/73/homework/1">
-                跳转1
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/Example03/students/12/homework/2">
-                跳转2
-              </router-link>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li><router-link to="/Example04-1">director1</router-link></li>
-            <li><router-link to="/Example04-2">director2</router-link></li>
-            <li><router-link to="/Example04-3">director3</router-link></li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li><router-link to="/Example05-1">v-model1</router-link></li>
-            <li><router-link to="/Example05-2">v-model2</router-link></li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li><router-link to="/Example06-1">绑定计算属性</router-link></li>
-            <li>
-              <router-link to="/Example06-2">同步修改计算属性</router-link>
-            </li>
-            <li>
-              <router-link to="/Example06-3">异步修改计算属性</router-link>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <ul>
-            <li><router-link to="/Example07-1">axios基本请求</router-link></li>
-            <li><router-link to="/homeworks">homeworks</router-link></li>
-          </ul>
-        </li>
-        <li>
-          <router-link to="/Example08">props</router-link>
-        </li>
-        <li>
-          <router-link to="/Example09">interceptors</router-link>
-        </li>
-        <li>
-          <router-link to="/Example10">嵌套路由</router-link>
-        </li>
-        <li>
-          <router-link to="/Example11">sessionStorage</router-link>
-        </li>
-        <li>
-          <router-link to="/Example12">前后端联调</router-link>
-        </li>
-        <li>
-          <router-link to="/Example13">读取Excel表格</router-link>
-        </li>
-      </ul>
-    </div>
-  </div>
+  <v-card class="mx-auto" width="300">
+    <v-list>
+      <v-list-item to="/Example01">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>Welcome</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list>
+      <v-list-item to="/Example02">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>数据驱动&计算属性</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list-group prepend-icon="mdi-account-circle" no-action>
+      <template v-slot:activator>
+        <v-list-item-title>路由传参</v-list-item-title>
+      </template>
+      <v-list-item to="/Example03/students/73/homework/1">
+        <v-list-item-title>sid:73 hid:1</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-account-multiple-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item to="/Example03/students/12/homework/2">
+        <v-list-item-title>sid:12 hid:2</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-account-multiple-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+    </v-list-group>
+    <v-list-group prepend-icon="mdi-ticket" no-action>
+      <template v-slot:activator>
+        <v-list-item-title>基本指令</v-list-item-title>
+      </template>
+      <v-list-item to="/Example04-1">
+        <v-list-item-title>v-text v-if v-show</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item to="/Example04-2">
+        <v-list-item-title>v-bind</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item to="/Example04-3">
+        <v-list-item-title>v-for</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+    </v-list-group>
+    <v-list-group prepend-icon="adb" no-action>
+      <template v-slot:activator>
+        <v-list-item-title>双向绑定</v-list-item-title>
+      </template>
+      <v-list-item to="/Example05-1">
+        <v-list-item-title>v-model</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-account-multiple-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item to="/Example05-2">
+        <v-list-item-title>example</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-account-multiple-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+    </v-list-group>
+    <v-list-group prepend-icon="mdi-ticket" no-action>
+      <template v-slot:activator>
+        <v-list-item-title>Vuex</v-list-item-title>
+      </template>
+      <v-list-item to="/Example06-1">
+        <v-list-item-title>绑定计算属性</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item to="/Example06-2">
+        <v-list-item-title>同步修改计算属性</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item to="/Example06-3">
+        <v-list-item-title>异步修改计算属性</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+    </v-list-group>
+    <v-list-group prepend-icon="mdi-ticket" no-action>
+      <template v-slot:activator>
+        <v-list-item-title>axios&mock&Vuex</v-list-item-title>
+      </template>
+      <v-list-item to="/Example07-1">
+        <v-list-item-title>axios基本请求</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+      <v-list-item to="/homeworks">
+        <v-list-item-title>homeworks</v-list-item-title>
+        <v-list-item-icon>
+          <v-icon>mdi-plus-outline</v-icon>
+        </v-list-item-icon>
+      </v-list-item>
+    </v-list-group>
+    <v-list>
+      <v-list-item to="/Example08">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>props</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list>
+      <v-list-item to="/Example09">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>interceptors</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list>
+      <v-list-item to="/Example10">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>嵌套路由</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list>
+      <v-list-item to="/Example11">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>Sessionstorage</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list>
+      <v-list-item to="/Example12">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>前后端联调</v-list-item-title>
+      </v-list-item>
+    </v-list>
+    <v-list>
+      <v-list-item to="/Example13">
+        <v-list-item-icon>
+          <v-icon>mdi-home</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title>读取Excel表格</v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-card>
 </template>
-<style scoped>
-#courses ul {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  flex-direction: column;
-  list-style-type: none;
-  text-align: center;
-}
-#courses li {
-  background: green;
-  height: 50px;
-  line-height: 50px;
-}
-#courses li:hover {
-  background: royalblue;
-  color: white;
-}
-#router {
-  margin: 20px 0;
-}
-router-link {
-  text-decoration: none;
-}
-#router li {
-  list-style-type: none;
-}
-#router ul li {
-  text-decoration: none;
-  display: block;
-  padding: 5px 20px;
-  text-align: center;
-}
-#router ul li:hover {
-  background: palevioletred;
-}
-#router ul li ul li:hover {
-  background: green;
-}
-</style>

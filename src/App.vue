@@ -1,39 +1,24 @@
 <template>
-  <div id="app">
-    <sidebar id="sidebar" />
-    <div>
-      <h1>HelloVue</h1>
-      <hr />
-      <router-view id="router" :key="$route.path" />
-      <alertdialog />
-    </div>
-  </div>
+  <v-app id="app" style="border: 1px solid red;">
+    <v-container fluid style="border: 1px solid red;">
+      <v-row style="border: 1px solid red;">
+        <v-col md="3"><sidebar id="sidebar" /></v-col>
+        <v-col md="9">
+          <h1>HelloVue</h1>
+          <hr />
+          <router-view id="router" :key="$route.path" />
+        </v-col>
+      </v-row>
+    </v-container>
+    <alertdialog />
+  </v-app>
 </template>
 <script>
 import sidebar from "./views/Sidebar";
 export default {
   components: {
     sidebar,
-    alertdialog: () => import("@/components/AlertDialog")
+    alertdialog: () => import("@/components/Dialog")
   }
 };
 </script>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-#app {
-  display: flex;
-  border: 1px solid red;
-}
-#sidebar {
-  border: 1px solid springgreen;
-  width: 300px;
-  margin: 20px;
-}
-#router {
-  border: 1px solid springgreen;
-}
-</style>
