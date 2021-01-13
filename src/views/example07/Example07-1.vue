@@ -37,9 +37,10 @@ export default {
       let resp = await axios.get("users/22");
       this.user = resp.data.user;
     },
-    async getHomework() {
-      let resp = await axios.get("student/22/homeworks/12");
-      this.user = resp.data.user;
+    getHomework() {
+      axios.get("students/12/homeworks/232").then(resp => {
+        this.user = resp.data.user;
+      });
     },
     login() {
       axios

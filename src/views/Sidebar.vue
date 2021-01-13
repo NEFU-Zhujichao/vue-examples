@@ -58,7 +58,6 @@
         <li>
           <router-link to="/Example08">props</router-link>
         </li>
-
         <li>
           <router-link to="/Example09">interceptors</router-link>
         </li>
@@ -67,6 +66,12 @@
         </li>
         <li>
           <router-link to="/Example11">sessionStorage</router-link>
+        </li>
+        <li>
+          <router-link to="/Example12">前后端联调</router-link>
+        </li>
+        <li>
+          <router-link to="/Example13">读取Excel表格</router-link>
         </li>
       </ul>
     </div>

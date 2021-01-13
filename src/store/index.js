@@ -15,7 +15,9 @@ const myState = {
   homework: {},
   exception: { message: null },
   name: null,
-  isLogin: false
+  isLogin: false,
+  teacher: null,
+  courses: null
 };
 
 const myMutations = {
@@ -37,6 +39,12 @@ const myMutations = {
   },
   [types.INDEX](state, data) {
     state.name = data;
+  },
+  teacher(state, data) {
+    state.teacher = data;
+  },
+  courses(state, data) {
+    state.courses = data;
   }
 };
 
@@ -72,6 +80,14 @@ const myActios = {
   async [types.INDEX]({ commit }, data) {
     let resp = await axios.get("index");
     commit(types.INDEX, resp.data.name);
+  },
+  async backendindex({ commit }, data) {
+    let resp = await axios.get("teacher/index");
+    commit("teacher", resp.data.teacher);
+    commit("courses", resp.data.courses);
+  },
+  async addCourse({ commit }, data) {
+    let resp = await axios.post("teacher/courses", data);
   }
 };
 export default new Vuex.Store({

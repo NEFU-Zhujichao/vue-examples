@@ -13,7 +13,7 @@ mock.onGet(path("users/{uid}")).reply(200, {
     userId: 1
   }
 });
-mock.onGet(path("student/{tid}/homeworks/{hid}")).reply(200, {
+mock.onGet(path("students/{tid}/homeworks/{hid}")).reply(200, {
   user: {
     userName: "qi",
     userId: 2

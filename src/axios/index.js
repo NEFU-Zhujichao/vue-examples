@@ -2,10 +2,12 @@ import axios from "axios";
 import store from "@/store/index";
 import { GET_EXCEPTION } from "@/store/types";
 import { author } from "@/utils/Const";
+
 axios.defaults.baseURL = "/api/";
 
 axios.interceptors.request.use(
   req => {
+    console.log("进入了请求拦截器");
     let auth = sessionStorage.getItem(author);
     if (auth != null) {
       req.headers[author] = auth;

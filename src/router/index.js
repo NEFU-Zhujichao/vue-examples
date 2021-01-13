@@ -101,6 +101,20 @@ const routes = [
   {
     path: "/Example11",
     component: () => import("@/views/example11/Example11.vue")
+  },
+  {
+    path: "/Example12",
+    component: () => import("@/views/example12/Example12.vue"),
+    children: [
+      {
+        path: "courses",
+        component: () => import("@/views/example12/Courses.vue")
+      }
+    ]
+  },
+  {
+    path: "/Example13",
+    component: () => import("@/views/example13/Example13.vue")
   }
 ];
 
@@ -109,8 +123,8 @@ const router = new VueRouter({
 });
 
 export default router;
-const teacherRole = "abcccccccccccccccccccccc";
-const studentRole = "sss";
+const teacherRole = "6983f953b49c88210cb9";
+const studentRole = "bb63e5f7e0f2ffae845c";
 let adminRoutes = [
   {
     path: "/Example11/welcome",
