@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "@/axios/index";
 import Vue from "vue";
 import Vuex from "vuex";
 import * as types from "./types";
@@ -31,7 +31,6 @@ const myMutations = {
     state.homework = data;
   }*/
   [types.GET_EXCEPTION](state, data) {
-    console.log(data);
     state.exception = data;
   },
   [types.LOGIN](state, data) {

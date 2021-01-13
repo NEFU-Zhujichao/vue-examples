@@ -5,6 +5,7 @@
       <h1>HelloVue</h1>
       <hr />
       <router-view id="router" :key="$route.path" />
+      <alertdialog />
     </div>
   </div>
 </template>
@@ -12,7 +13,8 @@
 import sidebar from "./views/Sidebar";
 export default {
   components: {
-    sidebar
+    sidebar,
+    alertdialog: () => import("@/components/AlertDialog")
   }
 };
 </script>

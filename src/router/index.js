@@ -104,13 +104,7 @@ const routes = [
   },
   {
     path: "/Example12",
-    component: () => import("@/views/example12/Example12.vue"),
-    children: [
-      {
-        path: "courses",
-        component: () => import("@/views/example12/Courses.vue")
-      }
-    ]
+    component: () => import("@/views/example12/Example12.vue")
   },
   {
     path: "/Example13",
@@ -129,6 +123,10 @@ let adminRoutes = [
   {
     path: "/Example11/welcome",
     component: () => import("@/views/example11/Welcome.vue")
+  },
+  {
+    path: "/Example12/courses",
+    component: () => import("@/views/example12/Courses.vue")
   }
 ];
 export function updateRoutes() {

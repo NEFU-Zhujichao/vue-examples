@@ -19,7 +19,6 @@
     <p>
       <router-link to="/Example12/courses">添加课程</router-link>
     </p>
-    <router-view />
   </div>
 </template>
 <script>

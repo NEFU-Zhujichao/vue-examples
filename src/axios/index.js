@@ -7,7 +7,6 @@ axios.defaults.baseURL = "/api/";
 
 axios.interceptors.request.use(
   req => {
-    console.log("进入了请求拦截器");
     let auth = sessionStorage.getItem(author);
     if (auth != null) {
       req.headers[author] = auth;
@@ -25,7 +24,6 @@ axios.interceptors.response.use(
   },
   error => {
     let resp = error.response;
-    console.log(resp);
     if (resp) {
       switch (resp.status) {
         case 401:
